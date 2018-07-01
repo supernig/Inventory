@@ -91,7 +91,7 @@ Public Class Form1
         cmd1.Parameters.AddWithValue("@tagID", ComboBox1.SelectedIndex + 1)
         cmd1.Parameters.AddWithValue("@stock", TextBox2.Text)
         If cmd2.ExecuteScalar > 0 Then
-            MsgBox("Naa na oy", MsgBoxStyle.Exclamation, "Error")
+            MsgBox("Item is already registered.", MsgBoxStyle.Exclamation, "Error")
             con.Close()
 
         Else
