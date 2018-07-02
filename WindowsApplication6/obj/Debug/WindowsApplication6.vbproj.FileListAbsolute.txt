@@ -32,3 +32,5 @@ C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplica
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.exe
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.xml
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.pdb
+C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\bin\Debug\MySql.Data.dll
+C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.vbproj.CopyComplete
