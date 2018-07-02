@@ -27,10 +27,6 @@ Public Class Form1
     Dim conn As New MySql.Data.MySqlClient.MySqlConnection
     Dim myConnectionString As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DbDataSet.items' table. You can move, or remove it, as needed.
-        Me.ItemsTableAdapter.FillBy1(Me.DbDataSet.items)
-        'TODO: This line of code loads data into the 'DbDataSet.items' table. You can move, or remove it, as needed.
-        Me.ItemsTableAdapter.FillBy1(Me.DbDataSet.items)
 
         ComboBox1.SelectedIndex = 0
 
