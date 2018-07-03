@@ -34,3 +34,13 @@ C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplica
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.pdb
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\bin\Debug\MySql.Data.dll
 C:\Users\A8-7600k\Desktop\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.vbproj.CopyComplete
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\bin\Debug\WindowsApplication6.exe.config
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.xml
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.Form1.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.Resources.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\obj\Debug\WindowsApplication6.vbproj.GenerateResource.Cache
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\bin\Debug\WindowsApplication6.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\bin\Debug\WindowsApplication6.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Inventory\WindowsApplication6\bin\Debug\WindowsApplication6.xml
