@@ -23,10 +23,10 @@ Public Class Form1
     Dim myConnectionString As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-      
+
         myConnectionString = "server=127.0.0.1;" _
             & "uid=root;" _
-            & "pwd=;" _
+            & "pwd=root;" _
             & "database=db"
 
         conn.ConnectionString = myConnectionString
