@@ -44,9 +44,6 @@ Public Class Form1
                         DataGridView1.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                         DataGridView1.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                         DataGridView1.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-
-
                         DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                         DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
@@ -124,6 +121,7 @@ Public Class Form1
                 If Panel3.Visible = False Then
                     Panel3.Visible = True
                     takara.Text = "Item name: " & DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString()
+                    tb3.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString()
 
                     Using con As New MySqlConnection(myConnectionString)
                         Using cmd As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString(), conn)
@@ -141,8 +139,6 @@ Public Class Form1
                                         DataGridView2.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                                         DataGridView2.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                                         DataGridView2.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-
                                         DataGridView2.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                                         DataGridView2.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                                         DataGridView2.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -262,6 +258,172 @@ Public Class Form1
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If Panel4.Visible = False Then
+            Panel4.Visible = True
+
+        Else
+            Panel4.Visible = False
+
+        End If
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles tb2.TextChanged
+
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Panel4.Visible = False
+    End Sub
+    Dim a As String
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewButtonColumn AndAlso
+           e.RowIndex >= 0 Then
+
+            If e.ColumnIndex = 0 Then
+
+                If Panel5.Visible = False Then
+                    Panel5.Visible = True
+                    a = DataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString()
+                    'MsgBox(DataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString(), MsgBoxStyle.Exclamation, "Error")
+                    tbe1.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value.ToString()
+                    cbe1.SelectedIndex = cbe1.Items.IndexOf(DataGridView2.Rows(e.RowIndex).Cells(4).Value.ToString())
+
+
+                Else
+                    Panel5.Visible = False
+
+                End If
+
+            End If
+
+            If e.ColumnIndex = 1 Then
+
+
+
+
+                Using con As New MySqlConnection(myConnectionString)
+                        Using cmd As New MySqlCommand("DELETE FROM itemcontent WHERE id =" + DataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString(), conn)
+                            cmd.CommandType = CommandType.Text
+
+                            If cmd.ExecuteNonQuery > 0 Then
+                                MsgBox("Successfully Deleted", MsgBoxStyle.Exclamation, "Process Complete")
+
+                                Using cmd1 As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & tb3.Text, conn)
+                                    cmd1.CommandType = CommandType.Text
+                                    Using sda As New MySqlDataAdapter(cmd1)
+                                        Using dt As New DataTable()
+
+
+                                            sda.Fill(dt)
+                                            Dim bSource As New BindingSource()
+                                            bSource.DataSource = dt
+                                        DataGridView2.DataSource = bSource
+                                        bSource.ResetBindings(False)
+                                        DataGridView2.Refresh()
+                                    End Using
+                                    End Using
+                                End Using
+
+                            Else
+                                MsgBox("UY, WA MAN", MsgBoxStyle.Exclamation, "Error")
+
+
+
+                            End If
+                        End Using
+                    End Using
+
+
+
+                End If
+        End If
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+        Using con1 As New MySqlConnection(myConnectionString)
+            Using cmd1 As New MySqlCommand("Select COUNT(*) FROM itemcontent where modelNumber ='" + tb2.Text + "' AND itemid=" & tb3.Text, conn)
+                cmd1.CommandType = CommandType.Text
+
+                If cmd1.ExecuteScalar > 0 Then
+                    MsgBox("Item is already registered.", MsgBoxStyle.Exclamation, "Error")
+
+                Else
+
+                    If tb2.Text = "" Then
+                        MsgBox("No no no", MsgBoxStyle.Exclamation, "Process Complete")
+                    Else
+                        Using con As New MySqlConnection(myConnectionString)
+                            Using cmd As New MySqlCommand(" INSERT INTO `db`.`itemcontent` (`itemid`,`tagID`,`modelNumber`,`StockID`) VALUES (" & tb3.Text & "," & cb2.SelectedIndex + 1 & ",'" & tb2.Text & "'," & tb3.Text & ");", conn)
+                                cmd.CommandType = CommandType.Text
+
+                                If cmd.ExecuteNonQuery > 0 Then
+                                    MsgBox("Successfully added to database", MsgBoxStyle.Exclamation, "Process Complete")
+                                    Panel4.Visible = False
+                                    tb2.Text = ""
+                                    Using cmd2 As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & tb3.Text, conn)
+                                        cmd2.CommandType = CommandType.Text
+                                        Using sda As New MySqlDataAdapter(cmd2)
+                                            Using dt As New DataTable()
+                                                sda.Fill(dt)
+                                                DataGridView2.DataSource = dt
+
+                                                DataGridView2.Update()
+
+                                            End Using
+                                        End Using
+                                    End Using
+
+
+                                End If
+                            End Using
+                        End Using
+                    End If
+                End If
+
+
+
+
+            End Using
+        End Using
+
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Using con As New MySqlConnection(myConnectionString)
+            Using cmd As New MySqlCommand(" UPDATE `db`.`itemcontent` SET `modelnumber`='" + tbe1.Text + "', tagID='" & cbe1.SelectedIndex + 1 & "' WHERE (`id` = '" & a & "' );", conn)
+                cmd.CommandType = CommandType.Text
+
+                If cmd.ExecuteNonQuery > 0 Then
+                    MsgBox("Successfully updated in the database", MsgBoxStyle.Exclamation, "Process Complete")
+                    Using cmd2 As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & tb3.Text, conn)
+                        cmd2.CommandType = CommandType.Text
+                        Using sda As New MySqlDataAdapter(cmd2)
+                            Using dt As New DataTable()
+
+                                sda.Fill(dt)
+                                Dim bSource As New BindingSource()
+                                bSource.DataSource = dt
+                                DataGridView2.DataSource = bSource
+                                bSource.ResetBindings(False)
+                                DataGridView2.Refresh()
+
+                            End Using
+                        End Using
+                    End Using
+                    Panel5.Visible = False
+
+
+                End If
+            End Using
+        End Using
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Panel5.Visible = False
 
     End Sub
 End Class

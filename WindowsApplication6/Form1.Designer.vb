@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -33,6 +33,9 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -40,21 +43,36 @@ Partial Class Form1
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Column3 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cbe1 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tbe1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.tb3 = New System.Windows.Forms.TextBox()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cb2 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tb2 = New System.Windows.Forms.TextBox()
+        Me.takara = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Column4 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.takara = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,17 +167,46 @@ Partial Class Form1
         Me.DataGridView1.Location = New System.Drawing.Point(12, 44)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(918, 440)
         Me.DataGridView1.TabIndex = 4
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = ""
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column3.Text = "View"
+        Me.Column3.UseColumnTextForButtonValue = True
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Action"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Text = "Edit"
+        Me.Column1.UseColumnTextForButtonValue = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = ""
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Text = "Delete"
+        Me.Column2.UseColumnTextForButtonValue = True
         '
         'Panel2
         '
@@ -236,41 +283,14 @@ Partial Class Form1
         Me.TextBox4.Size = New System.Drawing.Size(271, 20)
         Me.TextBox4.TabIndex = 0
         '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = ""
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column3.Text = "View"
-        Me.Column3.UseColumnTextForButtonValue = True
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "Action"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Text = "Edit"
-        Me.Column1.UseColumnTextForButtonValue = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = ""
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Text = "Delete"
-        Me.Column2.UseColumnTextForButtonValue = True
-        '
         'Panel3
         '
         Me.Panel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoSize = True
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.takara)
         Me.Panel3.Controls.Add(Me.Button7)
         Me.Panel3.Controls.Add(Me.DataGridView2)
@@ -281,15 +301,171 @@ Partial Class Form1
         Me.Panel3.TabIndex = 9
         Me.Panel3.Visible = False
         '
-        'Button6
+        'Panel5
         '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(847, 13)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 0
-        Me.Button6.Text = "Close"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.Button11)
+        Me.Panel5.Controls.Add(Me.Button10)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.cbe1)
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.tbe1)
+        Me.Panel5.Controls.Add(Me.Label4)
+        Me.Panel5.Location = New System.Drawing.Point(210, 32)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(499, 360)
+        Me.Panel5.TabIndex = 5
+        Me.Panel5.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(55, 131)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(29, 13)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Tag:"
+        '
+        'cbe1
+        '
+        Me.cbe1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbe1.FormattingEnabled = True
+        Me.cbe1.Items.AddRange(New Object() {"New", "Damaged", "Onrepair", "Deployable", "Rented"})
+        Me.cbe1.Location = New System.Drawing.Point(162, 128)
+        Me.cbe1.Name = "cbe1"
+        Me.cbe1.Size = New System.Drawing.Size(121, 21)
+        Me.cbe1.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(50, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 13)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Model Number:"
+        '
+        'tbe1
+        '
+        Me.tbe1.Location = New System.Drawing.Point(162, 78)
+        Me.tbe1.Name = "tbe1"
+        Me.tbe1.Size = New System.Drawing.Size(292, 20)
+        Me.tbe1.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(242, 35)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(25, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Edit"
+        '
+        'Panel4
+        '
+        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel4.AutoSize = True
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.tb3)
+        Me.Panel4.Controls.Add(Me.Button9)
+        Me.Panel4.Controls.Add(Me.Button8)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.cb2)
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.tb2)
+        Me.Panel4.Location = New System.Drawing.Point(225, 32)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(470, 304)
+        Me.Panel4.TabIndex = 4
+        Me.Panel4.Visible = False
+        '
+        'tb3
+        '
+        Me.tb3.Location = New System.Drawing.Point(37, 20)
+        Me.tb3.Name = "tb3"
+        Me.tb3.Size = New System.Drawing.Size(23, 20)
+        Me.tb3.TabIndex = 6
+        Me.tb3.Visible = False
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(345, 159)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(61, 23)
+        Me.Button9.TabIndex = 5
+        Me.Button9.Text = "Close"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(135, 159)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(204, 23)
+        Me.Button8.TabIndex = 4
+        Me.Button8.Text = "Add"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(34, 114)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(26, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Tag"
+        '
+        'cb2
+        '
+        Me.cb2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb2.FormattingEnabled = True
+        Me.cb2.Items.AddRange(New Object() {"New", "Damaged", "Onrepair", "Deployable", "Rented"})
+        Me.cb2.Location = New System.Drawing.Point(135, 109)
+        Me.cb2.Name = "cb2"
+        Me.cb2.Size = New System.Drawing.Size(120, 21)
+        Me.cb2.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(34, 76)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(76, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Model Number"
+        '
+        'tb2
+        '
+        Me.tb2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.tb2.Location = New System.Drawing.Point(135, 73)
+        Me.tb2.Name = "tb2"
+        Me.tb2.Size = New System.Drawing.Size(271, 20)
+        Me.tb2.TabIndex = 0
+        '
+        'takara
+        '
+        Me.takara.AutoSize = True
+        Me.takara.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.takara.Location = New System.Drawing.Point(14, 14)
+        Me.takara.Name = "takara"
+        Me.takara.Size = New System.Drawing.Size(86, 29)
+        Me.takara.TabIndex = 3
+        Me.takara.Text = "Label2"
+        '
+        'Button7
+        '
+        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button7.AutoSize = True
+        Me.Button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button7.Location = New System.Drawing.Point(806, 13)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(67, 23)
+        Me.Button7.TabIndex = 2
+        Me.Button7.Text = "Add Stock"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'DataGridView2
         '
@@ -327,25 +503,35 @@ Partial Class Form1
         Me.Column5.Text = "Delete"
         Me.Column5.UseColumnTextForButtonValue = True
         '
-        'Button7
+        'Button6
         '
-        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button7.Location = New System.Drawing.Point(766, 14)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 2
-        Me.Button7.Text = "Add Stock"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.AutoSize = True
+        Me.Button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button6.Location = New System.Drawing.Point(879, 13)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(43, 23)
+        Me.Button6.TabIndex = 0
+        Me.Button6.Text = "Close"
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'takara
+        'Button10
         '
-        Me.takara.AutoSize = True
-        Me.takara.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.takara.Location = New System.Drawing.Point(14, 14)
-        Me.takara.Name = "takara"
-        Me.takara.Size = New System.Drawing.Size(86, 29)
-        Me.takara.TabIndex = 3
-        Me.takara.Text = "Label2"
+        Me.Button10.Location = New System.Drawing.Point(162, 179)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(192, 23)
+        Me.Button10.TabIndex = 5
+        Me.Button10.Text = "Update"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(360, 179)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(94, 23)
+        Me.Button11.TabIndex = 6
+        Me.Button11.Text = "Close"
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -358,7 +544,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -367,6 +555,10 @@ Partial Class Form1
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -400,4 +592,20 @@ Partial Class Form1
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents takara As System.Windows.Forms.Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents tb2 As TextBox
+    Friend WithEvents cb2 As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents tb3 As TextBox
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents tbe1 As TextBox
+    Friend WithEvents cbe1 As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
 End Class
