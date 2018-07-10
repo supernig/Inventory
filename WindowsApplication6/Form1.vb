@@ -71,7 +71,7 @@ Public Class Form1
                 Else
 
                     If TextBox1.Text = "" Then
-                        MsgBox("No no no", MsgBoxStyle.Exclamation, "Process Complete")
+                        MsgBox("Inputs cannot be blank.", MsgBoxStyle.Exclamation, "Process Complete")
                     Else
                         Using con As New MySqlConnection(myConnectionString)
                             Using cmd As New MySqlCommand(" INSERT INTO `db`.`items` (`name`) VALUES ('" + TextBox1.Text + "');", conn)
@@ -215,7 +215,7 @@ Public Class Form1
                             End Using
 
                         Else
-                            MsgBox("UY, WA MAN", MsgBoxStyle.Exclamation, "Error")
+                            MsgBox("Something went wrong.", MsgBoxStyle.Exclamation, "Error")
 
 
 
@@ -237,7 +237,7 @@ Public Class Form1
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         If TextBox4.Text = "" Then
-            MsgBox("No no no", MsgBoxStyle.Exclamation, "Process Complete")
+            MsgBox("Inputs cannot be blank", MsgBoxStyle.Exclamation, "Process Complete")
         Else
 
             Using con As New MySqlConnection(myConnectionString)
@@ -361,11 +361,11 @@ Public Class Form1
                                 End Using
 
                             Else
-                                MsgBox("UY, WA MAN", MsgBoxStyle.Exclamation, "Error")
+                            MsgBox("Something went wrong", MsgBoxStyle.Exclamation, "Error")
 
 
 
-                            End If
+                        End If
                         End Using
                     End Using
 
@@ -388,7 +388,7 @@ Public Class Form1
                 Else
 
                     If tb2.Text = "" Then
-                        MsgBox("No no no", MsgBoxStyle.Exclamation, "Process Complete")
+                        MsgBox("Inputs cannot be blank", MsgBoxStyle.Exclamation, "Process Complete")
                     Else
                         Using con As New MySqlConnection(myConnectionString)
                             Using cmd As New MySqlCommand(" INSERT INTO `db`.`itemcontent` (`itemid`,`tagID`,`modelNumber`,`StockID`) VALUES (" & tb3.Text & "," & cb2.SelectedIndex + 1 & ",'" & tb2.Text & "'," & tb3.Text & ");", conn)
@@ -443,50 +443,56 @@ Public Class Form1
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Using con As New MySqlConnection(myConnectionString)
-            Using cmd As New MySqlCommand(" UPDATE `db`.`itemcontent` SET `modelnumber`='" + tbe1.Text + "', tagID='" & cbe1.SelectedIndex + 1 & "' WHERE (`id` = '" & a & "' );", conn)
-                cmd.CommandType = CommandType.Text
+        If tbe1.Text = "" Then
+            MsgBox("Inputs cannot be blank", MsgBoxStyle.Exclamation, "Process Complete")
 
-                If cmd.ExecuteNonQuery > 0 Then
-                    MsgBox("Successfully updated in the database", MsgBoxStyle.Exclamation, "Process Complete")
-                    Using cmd2 As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & tb3.Text, conn)
-                        cmd2.CommandType = CommandType.Text
-                        Using sda As New MySqlDataAdapter(cmd2)
-                            Using dt As New DataTable()
+        Else
 
-                                sda.Fill(dt)
-                                Dim bSource As New BindingSource()
-                                bSource.DataSource = dt
-                                DataGridView2.DataSource = bSource
-                                bSource.ResetBindings(False)
-                                DataGridView2.Refresh()
+            Using con As New MySqlConnection(myConnectionString)
+                Using cmd As New MySqlCommand(" UPDATE `db`.`itemcontent` SET `modelnumber`='" + tbe1.Text + "', tagID='" & cbe1.SelectedIndex + 1 & "' WHERE (`id` = '" & a & "' );", conn)
+                    cmd.CommandType = CommandType.Text
 
+                    If cmd.ExecuteNonQuery > 0 Then
+                        MsgBox("Successfully updated in the database", MsgBoxStyle.Exclamation, "Process Complete")
+                        Using cmd2 As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & tb3.Text, conn)
+                            cmd2.CommandType = CommandType.Text
+                            Using sda As New MySqlDataAdapter(cmd2)
+                                Using dt As New DataTable()
 
-                                Using con1 As New MySqlConnection(myConnectionString)
-                                    Using cmd3 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & b, conn)
-                                        cmd3.CommandType = CommandType.Text
-                                        If IsDBNull(cmd3) Then
-                                            MessageBox.Show("No record")
-                                        Else
-                                            Using sda1 As New MySqlDataAdapter(cmd3)
-                                                RecordCount = Convert.ToInt32(cmd3.ExecuteScalar())
-                                                Label10.Text = "Available Stocks: " & RecordCount.ToString
+                                    sda.Fill(dt)
+                                    Dim bSource As New BindingSource()
+                                    bSource.DataSource = dt
+                                    DataGridView2.DataSource = bSource
+                                    bSource.ResetBindings(False)
+                                    DataGridView2.Refresh()
 
 
+                                    Using con1 As New MySqlConnection(myConnectionString)
+                                        Using cmd3 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & b, conn)
+                                            cmd3.CommandType = CommandType.Text
+                                            If IsDBNull(cmd3) Then
+                                                MessageBox.Show("No record")
+                                            Else
+                                                Using sda1 As New MySqlDataAdapter(cmd3)
+                                                    RecordCount = Convert.ToInt32(cmd3.ExecuteScalar())
+                                                    Label10.Text = "Available Stocks: " & RecordCount.ToString
 
-                                            End Using
-                                        End If
+
+
+                                                End Using
+                                            End If
+                                        End Using
                                     End Using
                                 End Using
                             End Using
                         End Using
-                    End Using
-                    Panel5.Visible = False
+                        Panel5.Visible = False
 
 
-                End If
+                    End If
+                End Using
             End Using
-        End Using
+        End If
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
