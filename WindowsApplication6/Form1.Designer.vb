@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -44,7 +44,10 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbe1 = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -64,8 +67,6 @@ Partial Class Form1
         Me.Column4 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,14 +168,14 @@ Partial Class Form1
         Me.DataGridView1.Location = New System.Drawing.Point(12, 44)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(918, 440)
         Me.DataGridView1.TabIndex = 4
@@ -289,17 +290,28 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.AutoSize = True
+        Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.takara)
         Me.Panel3.Controls.Add(Me.Button7)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Controls.Add(Me.Button6)
-        Me.Panel3.Location = New System.Drawing.Point(0, 1)
+        Me.Panel3.Location = New System.Drawing.Point(-3, -4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(940, 494)
+        Me.Panel3.Size = New System.Drawing.Size(955, 561)
         Me.Panel3.TabIndex = 9
         Me.Panel3.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(15, 38)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(57, 20)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Label2"
         '
         'Panel5
         '
@@ -312,11 +324,29 @@ Partial Class Form1
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.tbe1)
         Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Location = New System.Drawing.Point(210, 32)
+        Me.Panel5.Location = New System.Drawing.Point(228, 48)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(499, 360)
         Me.Panel5.TabIndex = 5
         Me.Panel5.Visible = False
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(360, 179)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(94, 23)
+        Me.Button11.TabIndex = 6
+        Me.Button11.Text = "Close"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(162, 179)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(192, 23)
+        Me.Button10.TabIndex = 5
+        Me.Button10.Text = "Update"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -374,9 +404,9 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.cb2)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.tb2)
-        Me.Panel4.Location = New System.Drawing.Point(225, 32)
+        Me.Panel4.Location = New System.Drawing.Point(242, 48)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(470, 304)
+        Me.Panel4.Size = New System.Drawing.Size(470, 451)
         Me.Panel4.TabIndex = 4
         Me.Panel4.Visible = False
         '
@@ -390,7 +420,7 @@ Partial Class Form1
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(345, 159)
+        Me.Button9.Location = New System.Drawing.Point(331, 230)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(61, 23)
         Me.Button9.TabIndex = 5
@@ -399,7 +429,7 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(135, 159)
+        Me.Button8.Location = New System.Drawing.Point(121, 230)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(204, 23)
         Me.Button8.TabIndex = 4
@@ -410,7 +440,7 @@ Partial Class Form1
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(34, 114)
+        Me.Label3.Location = New System.Drawing.Point(34, 187)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 13)
         Me.Label3.TabIndex = 3
@@ -422,7 +452,7 @@ Partial Class Form1
         Me.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb2.FormattingEnabled = True
         Me.cb2.Items.AddRange(New Object() {"New", "Damaged", "Onrepair", "Deployable", "Rented"})
-        Me.cb2.Location = New System.Drawing.Point(135, 109)
+        Me.cb2.Location = New System.Drawing.Point(135, 187)
         Me.cb2.Name = "cb2"
         Me.cb2.Size = New System.Drawing.Size(120, 21)
         Me.cb2.TabIndex = 2
@@ -431,7 +461,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 76)
+        Me.Label2.Location = New System.Drawing.Point(34, 149)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 13)
         Me.Label2.TabIndex = 1
@@ -440,7 +470,7 @@ Partial Class Form1
         'tb2
         '
         Me.tb2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.tb2.Location = New System.Drawing.Point(135, 73)
+        Me.tb2.Location = New System.Drawing.Point(135, 146)
         Me.tb2.Name = "tb2"
         Me.tb2.Size = New System.Drawing.Size(271, 20)
         Me.tb2.TabIndex = 0
@@ -448,10 +478,10 @@ Partial Class Form1
         'takara
         '
         Me.takara.AutoSize = True
-        Me.takara.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.takara.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.takara.Location = New System.Drawing.Point(14, 14)
         Me.takara.Name = "takara"
-        Me.takara.Size = New System.Drawing.Size(86, 29)
+        Me.takara.Size = New System.Drawing.Size(57, 20)
         Me.takara.TabIndex = 3
         Me.takara.Text = "Label2"
         '
@@ -460,7 +490,7 @@ Partial Class Form1
         Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button7.AutoSize = True
         Me.Button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button7.Location = New System.Drawing.Point(806, 13)
+        Me.Button7.Location = New System.Drawing.Point(821, 13)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(67, 23)
         Me.Button7.TabIndex = 2
@@ -471,6 +501,8 @@ Partial Class Form1
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AllowUserToResizeColumns = False
+        Me.DataGridView2.AllowUserToResizeRows = False
         Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -478,11 +510,11 @@ Partial Class Form1
         Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column5})
-        Me.DataGridView2.Location = New System.Drawing.Point(14, 53)
+        Me.DataGridView2.Location = New System.Drawing.Point(15, 61)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.Size = New System.Drawing.Size(908, 425)
+        Me.DataGridView2.Size = New System.Drawing.Size(918, 427)
         Me.DataGridView2.TabIndex = 1
         '
         'Column4
@@ -508,30 +540,12 @@ Partial Class Form1
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button6.AutoSize = True
         Me.Button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button6.Location = New System.Drawing.Point(879, 13)
+        Me.Button6.Location = New System.Drawing.Point(894, 13)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(43, 23)
         Me.Button6.TabIndex = 0
         Me.Button6.Text = "Close"
         Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(162, 179)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(192, 23)
-        Me.Button10.TabIndex = 5
-        Me.Button10.Text = "Update"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(360, 179)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(94, 23)
-        Me.Button11.TabIndex = 6
-        Me.Button11.Text = "Close"
-        Me.Button11.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -608,4 +622,5 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
+    Friend WithEvents Label10 As Label
 End Class

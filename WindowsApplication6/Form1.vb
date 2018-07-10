@@ -110,7 +110,8 @@ Public Class Form1
 
 
     End Sub
-
+    Dim RecordCount As Int32 = 0
+    Dim b As String
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
 
@@ -122,7 +123,7 @@ Public Class Form1
                     Panel3.Visible = True
                     takara.Text = "Item name: " & DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString()
                     tb3.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString()
-
+                    b = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString()
                     Using con As New MySqlConnection(myConnectionString)
                         Using cmd As New MySqlCommand("SELECT itemcontent.id,itemcontent.modelnumber,tag.description FROM items left outer join itemcontent on itemcontent.itemID = items.id left outer join tag on itemcontent.tagID = tag.id where items.id =" & DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString(), conn)
                             cmd.CommandType = CommandType.Text
@@ -143,6 +144,22 @@ Public Class Form1
                                         DataGridView2.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                                         DataGridView2.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+                                        Using con1 As New MySqlConnection(myConnectionString)
+                                            Using cmd1 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString(), conn)
+                                                cmd1.CommandType = CommandType.Text
+                                                If IsDBNull(cmd1) Then
+                                                    MessageBox.Show("No record")
+                                                Else
+                                                    Using sda1 As New MySqlDataAdapter(cmd1)
+                                                        RecordCount = Convert.ToInt32(cmd1.ExecuteScalar())
+                                                        Label10.Text = "Available Stocks: " & RecordCount.ToString
+
+
+
+                                                    End Using
+                                                End If
+                                            End Using
+                                        End Using
 
                                     End Using
                                 End Using
@@ -322,6 +339,23 @@ Public Class Form1
                                         DataGridView2.DataSource = bSource
                                         bSource.ResetBindings(False)
                                         DataGridView2.Refresh()
+
+                                        Using con1 As New MySqlConnection(myConnectionString)
+                                            Using cmd2 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString(), conn)
+                                                cmd2.CommandType = CommandType.Text
+                                                If IsDBNull(cmd2) Then
+                                                    MessageBox.Show("No record")
+                                                Else
+                                                    Using sda1 As New MySqlDataAdapter(cmd2)
+                                                        RecordCount = Convert.ToInt32(cmd2.ExecuteScalar())
+                                                        Label10.Text = "Available Stocks: " & RecordCount.ToString
+
+
+
+                                                    End Using
+                                                End If
+                                            End Using
+                                        End Using
                                     End Using
                                     End Using
                                 End Using
@@ -373,6 +407,22 @@ Public Class Form1
 
                                                 DataGridView2.Update()
 
+                                                Using con2 As New MySqlConnection(myConnectionString)
+                                                    Using cmd3 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & b, conn)
+                                                        cmd3.CommandType = CommandType.Text
+                                                        If IsDBNull(cmd3) Then
+                                                            MessageBox.Show("No record")
+                                                        Else
+                                                            Using sda1 As New MySqlDataAdapter(cmd3)
+                                                                RecordCount = Convert.ToInt32(cmd3.ExecuteScalar())
+                                                                Label10.Text = "Available Stocks: " & RecordCount.ToString
+
+
+
+                                                            End Using
+                                                        End If
+                                                    End Using
+                                                End Using
                                             End Using
                                         End Using
                                     End Using
@@ -411,6 +461,23 @@ Public Class Form1
                                 bSource.ResetBindings(False)
                                 DataGridView2.Refresh()
 
+
+                                Using con1 As New MySqlConnection(myConnectionString)
+                                    Using cmd3 As New MySqlCommand("SELECT COUNT(itemcontent.id) from items left join itemcontent on itemcontent.itemID = items.id where  itemcontent.tagID = 1 AND items.id = " & b, conn)
+                                        cmd3.CommandType = CommandType.Text
+                                        If IsDBNull(cmd3) Then
+                                            MessageBox.Show("No record")
+                                        Else
+                                            Using sda1 As New MySqlDataAdapter(cmd3)
+                                                RecordCount = Convert.ToInt32(cmd3.ExecuteScalar())
+                                                Label10.Text = "Available Stocks: " & RecordCount.ToString
+
+
+
+                                            End Using
+                                        End If
+                                    End Using
+                                End Using
                             End Using
                         End Using
                     End Using
@@ -424,6 +491,22 @@ Public Class Form1
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         Panel5.Visible = False
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub cb2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub takara_Click(sender As Object, e As EventArgs) Handles takara.Click
 
     End Sub
 End Class
